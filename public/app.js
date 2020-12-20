@@ -1,4 +1,4 @@
-const albumBucketName = 'upload-test-syd';
+const albumBucketName = 'view-unauth-syd';
 
 // Initialize the Amazon Cognito credentials provider
 AWS.config.region = 'ap-southeast-2'; // Region
@@ -49,7 +49,7 @@ function listAlbums() {
                 getHtml(albums),
                 '</ul>',
             ]
-            document.getElementById('viewer').innerHTML = getHtml(htmlTemplate);
+            document.getElementById('app').innerHTML = getHtml(htmlTemplate);
         }
     });
 }
@@ -107,7 +107,7 @@ function viewAlbum(albumName) {
             '</button>',
             '</div>',
         ]
-        document.getElementById('viewer').innerHTML = getHtml(htmlTemplate);
+        document.getElementById('app').innerHTML = getHtml(htmlTemplate);
         document.getElementsByTagName('img')[0].setAttribute('style', 'display:none;');
     });
 }
